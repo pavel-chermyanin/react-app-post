@@ -26,16 +26,16 @@
   // Имена компонентов с большой буквы
 
 //    <div className='parent'>
-//     <h2 className='title'>Текст: {text}</h2> 
+//     <h2 className='title'>Текст: {text}</h2>
 //     <input type="text" />
 //     <label htmlFor="test"></label>
 //     <button tabIndex='0'>click</button>
 //   </div>
 // );
+// ==============================================================================
 
 
 // 89
-
 
 // import React from 'react';
 
@@ -100,3 +100,34 @@
 
 // export { Header };
 // export default App;
+// ==============================================================================
+
+
+
+// 91
+
+//function WhoAmI(props) { // компонент всегда принимает пропсы в виде объекта
+// можем воспользоваться деструктуризацией
+// компонент не должен изменять свои пропсы
+// если изменится состание react должен сделать ререндер  компонента
+// в качестве пропсов мы можем передавать и функции и любое выражение
+
+// function WhoAmI({ name, surname, link }) {
+//   return (
+//     <div>
+//       <h1>My name is {name.firstName}, surname - {surname}</h1>
+//       {/* <h1>My name is {name()}, surname - {surname}</h1> */}
+//       <a href={link}>My profile</a>
+//     </div>
+//   )
+// }
+// function App() {
+//   return (
+//     <div className='app'>
+//       <WhoAmI name={{ firstName: "John" }} surname="Smith" link="facebook.com" />
+//       <WhoAmI name={{ firstName: "Alex" }} surname="Doo" link="instagram.com" />
+//       {/* <WhoAmI name={()=> {return 'Pavel'}} surname="Doo" link="instagram.com" /> */}
+//     </div>
+//   )
+// }
+// export default App
