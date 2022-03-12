@@ -42,6 +42,7 @@
     color: #ffd700;
     transition:  .3s all;
     transform: translateX(30px);
+    opacity: 0;
 }
 .list-group-item.like .fa-star{
     opacity: 1;
