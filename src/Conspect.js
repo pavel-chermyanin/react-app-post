@@ -281,3 +281,66 @@
 //   )
 // }
 //==============================================================================
+
+
+
+//100
+
+// class App extends Component {
+
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       data: [
+//         { name: 'Pavel', salary: 8400, increase: true, rise: true, id: 1 },
+//         { name: 'Alsou', salary: 900, increase: false, rise: false, id: 2 },
+//         { name: 'John', salary: 500, increase: false, rise: false, id: 3 }
+//       ],
+//       term: ''
+//     }
+//   }
+
+//   getRandomId = () => {
+//     return `${Math.random()}`;
+//   }
+
+//   deleteItem = (id) => {
+//     this.setState(({ data }) => ({
+//       data: data.filter((item) => item.id !== id)
+//     }))
+//   }
+
+//   addItem = (name, salary) => {
+//     const newEmployee = {
+//       name,
+//       salary,
+//       increase: false,
+//       rise: false,
+//       id: this.getRandomId()
+//     }
+//     this.setState(({ data }) => ({
+//       data: [...data, newEmployee]
+//     }))
+//   }
+
+//   onToggleProp = (id, prop) => {
+//     this.setState(({ data }) => ({
+//       data: data.map(item => {
+//         if (item.id === id) {
+//           return { ...item, [prop]: !item[prop] }
+//         }
+//         return item;
+//       })
+//     }))
+//     // this.setState(({data}) => {
+//     //   const index = data.findIndex(elem => elem.id === id);
+
+//     //   const old = data[index];
+//     //   const newItem = {...old, increase: !old.increase};
+//     //   const newArr = [...data.slice(0, index), newItem, ...data.slice(index+1)];
+
+//     //   return {
+//     //     data: newArr
+//     //   }
+//     // })
+//   }
