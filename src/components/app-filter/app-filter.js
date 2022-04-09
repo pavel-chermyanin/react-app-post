@@ -9,7 +9,7 @@ const AppFilter = (props) => {
         { name: 'money', label: 'З/П больше 1000$' },
     ];
 
-    const buttons = buttonsData.map(({ name, label }) => {
+    const buttons = buttonsData.map(({ name, label,colored }) => {
         // здесть мы получаем filter из глобального state
         // так же отправляем колбэк наверх с аргументом активного button
         const active = props.filter === name;

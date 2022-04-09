@@ -5,7 +5,8 @@ import './employers-list.css'
 const EmployersList = ({ 
     data,
     onDelete,
-    onToggleProp }) => {
+    onToggleProp,
+    onChangeSalary }) => {
     //свойство key требуется для лучшей оптимизации
 
     const elements = data.map(item => {
@@ -15,6 +16,7 @@ const EmployersList = ({
             key={id}
             {...restProps}
             onDelete={() => onDelete(id)}
+            onChangeSalary={(e) => onChangeSalary(id, e.currentTarget.value)}
             onToggleProp={(e) => onToggleProp(id, e.currentTarget.getAttribute('data-toggle'))} />
     })
     return (

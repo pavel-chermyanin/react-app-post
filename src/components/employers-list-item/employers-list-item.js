@@ -8,6 +8,7 @@ const EmployersListItem = (props) => {
         onDelete,
         onToggleProp,
         increase,
+        onChangeSalary,
         rise } = props;
 
     let classes = 'list-group-item d-flex justify-content-between';
@@ -18,6 +19,23 @@ const EmployersListItem = (props) => {
         classes += ' like'
     }
 
+    const onChangeSal = (e) => {
+        let value = e.currentTarget.value;
+        
+        // if (/[a-z]/i.test(value)) {
+        //     return
+        //     console.log('буквы');
+        // }
+
+        if (value.slice(-1) !== '$') {
+            const targetSym = value.indexOf('$');
+            value = value.slice(0, targetSym + 1);
+            e.currentTarget.value = value;
+            return
+        }
+        onChangeSalary(e)
+    }
+
     return (
         <li className={classes}>
             <span
@@ -26,9 +44,11 @@ const EmployersListItem = (props) => {
                 className="list-group-item-label">
                 {name}
             </span>
-            <input type="text"
+            <input
+                onChange={onChangeSal}
+                type="text"
                 className="list-group-item-input"
-                defaultValue={salary + '$'} />
+                value={salary + '$'} />
 
             <div className="d-flex justify-content-center align-items-center">
                 <button
