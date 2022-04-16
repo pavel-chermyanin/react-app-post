@@ -1,4 +1,4 @@
-import './employers-list-item.css';
+import './employers-list-item.scss';
 
 
 const EmployersListItem = (props) => {
@@ -11,7 +11,7 @@ const EmployersListItem = (props) => {
         onChangeSalary,
         rise } = props;
 
-    let classes = 'list-group-item d-flex justify-content-between';
+    let classes = 'list-group-item d-flex justify-content-between align-items-center';
     if (increase) {
         classes += ' increase';
     }
@@ -21,7 +21,7 @@ const EmployersListItem = (props) => {
 
     const onChangeSal = (e) => {
         let value = e.currentTarget.value;
-        
+
         // if (/[a-z]/i.test(value)) {
         //     return
         //     console.log('буквы');
@@ -38,19 +38,25 @@ const EmployersListItem = (props) => {
 
     return (
         <li className={classes}>
-            <span
-                data-toggle="rise"
-                onClick={onToggleProp}
-                className="list-group-item-label">
-                {name}
-            </span>
+            <div className="list-item-name">
+                <p
+                    data-toggle="rise"
+                    onClick={onToggleProp}
+                    className="list-group-item-label list-item-supname">
+                    {name}
+                </p>
+                <p className='list-item-subname'>
+                    Кликните на имя чтобы повысить  
+                </p>
+
+            </div>
             <input
                 onChange={onChangeSal}
                 type="text"
                 className="list-group-item-input"
                 value={salary + '$'} />
 
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="btns d-flex justify-content-center align-items-center">
                 <button
                     data-toggle="increase"
                     onClick={onToggleProp}

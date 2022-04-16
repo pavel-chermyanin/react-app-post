@@ -1,0 +1,19 @@
+.search-panel {
+    padding: 30px;
+    background-color: #3d5a80;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    color: #fff;
+
+    .btn-group{
+          @media(max-width: 570px) {
+              flex-wrap: wrap;
+          }
+    }
+    .btn {
+        @media(max-width: 570px) {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+    }
+}

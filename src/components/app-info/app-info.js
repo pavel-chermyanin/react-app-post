@@ -5,7 +5,7 @@
 import styled from 'styled-components';
 
 
-import './app-info.css';
+import './app-info.scss';
 
 
 export const Header = styled.h2`
